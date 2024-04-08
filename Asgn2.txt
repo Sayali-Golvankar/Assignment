@@ -1,0 +1,169 @@
+import java.util.Scanner;
+
+Q1 Reverse Fibonacci
+class Fibonacci{
+
+static int fib(int a){
+if (a <=1)
+return a;
+
+else 
+return fib(a-1)+ fib(a-2);
+}
+
+public static void main(String arg[])
+{
+
+//int n = 10;
+Scanner sc = new Scanner(System.in);
+System.out.print("Enter Number : ");
+int n =sc.nextInt();
+sc.close();
+System.out.print("Reverse Fibonacci series : ");
+for (int i = n; i>=0 ; i--){
+System.out.print(fib(i) + " ");
+
+}
+}
+}
+
+
+O/P as follow :-
+D:\d\PGDAC\ADS\Day 2  3-4-24>java Fibonacci
+Enter Number : 5
+Reverse Fibonacci series : 5 3 2 1 1 0
+-----------------------------------------------------------
+Q2 Sum  of NaturalNumber
+
+class SumofNatural{
+
+static int sum(int n){
+if (n >= 10){  //1< 0--f
+return n;
+}
+else{
+return n+sum(n+1); //1+sum(1+1)---1+1---2 go to int n= 2
+}
+
+
+
+}
+
+
+public static void main (String arg[]){
+int result = sum (1);
+System.out.println("Sum is : ");
+System.out.println(result);
+
+}
+
+}
+
+O/P as follow :-
+
+D:\d\PGDAC\ADS\Day 2  3-4-24>javac SumofNatural.java
+
+D:\d\PGDAC\ADS\Day 2  3-4-24>java SumofNatural
+Sum is :
+55
+
+---------------------------------------------------------------------
+Q3 Sum of array
+
+class SumofArray{
+static int displaySum(int arr[], int n){
+
+if (n <= 0)
+return n;
+
+else
+return displaySum(arr, n-1)+ arr[n-1]; /*arr, 4-1 + arr[3] is 4 
+                                       arr, 3-1 +arr[2] is 3
+                                       */ 
+                             
+
+}
+
+public static void main(String arg[]){
+int arr []= {1, 2, 3, 4};
+int n = arr.length;
+System.out.println("Sum is : ");
+System.out.println(displaySum(arr, n));
+
+}
+
+
+
+}  //clas end
+
+O/P as follow :-
+Sum is :
+10
+
+---------------------------------------------------------------------------------
+Q4 Print Number 
+class PrintNumbers{
+
+static void showNum(int n){
+
+if (n > 0){
+
+
+showNum(n-1);
+System.out.println(n + " ");
+
+}
+//return;
+}
+
+
+public static void main(String arg[]){
+System.out.println("Numbers are : ");
+showNum(10);
+
+}
+
+} 
+
+O/P as follow :-
+Numbers are :
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+------------------------------------------------------------------------------------
+
+Q5 Mean of array
+
+import java.util.Scanner;
+class Meanarray{
+
+
+static int show(int arr[],int n)
+{
+if(n==0)
+{
+return 0;
+}
+return(arr[n-1]+ show(arr,n-1));
+}
+public static void main(String args[])
+{
+Scanner sc = new Scanner(System.in);
+int n = sc.nextInt();
+int arr[]= new int[n];
+for(int i = 0 ; i<n ; i++)
+{
+arr[i] = sc.nextInt();
+}
+int total = (show(arr,arr.length)/n);
+System.out.println(total);
+}
+}
+-------------------------------------------------------------------
