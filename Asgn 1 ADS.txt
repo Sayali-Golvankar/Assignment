@@ -1,0 +1,158 @@
+
+Q1 Palindrome
+
+import java.util.Scanner;
+public class Palindrome1{
+static int pal(int num, int sum){
+
+if (num ==0)
+return sum;
+sum = (sum*10)+ (num %10);
+return pal(num/10, sum);
+
+}
+
+
+public static void main(String arg[]){
+
+int num, sum = 0 , p;
+Scanner sc = new Scanner(System.in);
+num= sc.nextInt();
+sc.close();
+p = pal(num, sum); //sum is to store value
+if (num==p){ //p to check with num
+System.out.println(num+"is Palindrome number");
+}
+else {
+System.out.println(num+"is Not Palindrome number");
+
+
+}
+
+}
+}
+O/P as follow:
+D:\d\PGDAC\ADS\Day 1 2-4-24\Code D1>javac Palindrome1.java
+
+
+D:\d\PGDAC\ADS\Day 1 2-4-24\Code D1>java Palindrome1
+120
+120is Not Palindrome number
+
+D:\d\PGDAC\ADS\Day 1 2-4-24\Code D1>java Palindrome1
+121
+121is Palindrome number
+
+D:\d\PGDAC\ADS\Day 1 2-4-24\Code D1>
+-------------------------------------------------------------------------
+Q2 Primefactor
+
+
+
+import java.util.Scanner;
+
+class Primefactor{
+
+static int show(int num,int i)
+{
+if(num%i == 0)
+{
+num = num/i;
+System.out.println(i);
+}
+else
+{
+i++;
+}
+if (num == 1)
+{
+System.out.println(num);
+return num;
+}
+return show(num,i);
+
+}
+
+
+
+public static void main(String args[])
+{
+
+Scanner s = new Scanner(System.in);
+int num = s.nextInt();
+int i =2;
+show(num,i);
+
+
+}
+
+
+}
+O/P as follow:
+
+D:\d\PGDAC\ADS\Day 1 2-4-24\Code D1>javac Primefactor.java
+
+D:\d\PGDAC\ADS\Day 1 2-4-24\Code D1>java Primefactor
+12
+
+2
+2
+3
+1
+---------------------------------------------------------------------------------
+Q3
+PrimeNumber
+
+import java.util.Scanner;
+
+class Prime{
+
+static int show(int num, int i) 
+{
+
+if(num%i != 0 && (i <= (num/2)))
+{
+i++; 
+return show(num,i);
+
+}
+return i;
+}
+
+
+
+
+
+public static void main(String args[])
+{
+
+Scanner s = new Scanner(System.in);
+int num = s.nextInt();
+int i =2;
+int k = show(num,i);
+if(k >= (num/2))
+{
+System.out.println("Prime");
+}
+else if(k < (num/2))
+{
+System.out.println("Not Prime");
+}
+}
+}
+
+
+
+O/P as follow:-
+D:\d\PGDAC\ADS\Day 1 2-4-24\Code D1>Java Prime
+
+7
+Prime
+
+10
+Not Prime
+
+D:\d\PGDAC\ADS\Day 1 2-4-24\Code D1>
+
+
+
